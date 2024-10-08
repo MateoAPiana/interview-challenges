@@ -2,6 +2,6 @@ export default function stringTerminaCon(
   string: string,
   final: string
 ): boolean {
-  // TODO: implement
+  if (string.endsWith(final))return true
   return false;
 }
