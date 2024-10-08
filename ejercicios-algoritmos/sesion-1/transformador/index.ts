@@ -4,12 +4,25 @@ type Input = {
 };
 
 type Output = {
-  id: string;
+  id: number;
   nombre: string;
-  edad: string;
+  edad: number;
 };
 
 export default function transformador(input: Input): Output[] {
-  // TODO: implement
-  return [];
+  const data: Output[] = []
+  input.nombres.map((n, i)=>{
+    data.push({
+      id: i + 1,
+      nombre: n,
+      edad: input.edades[i]
+    })
+  })
+  return data;
 }
+
+console.log(transformador({
+  nombres: ["Juan", "Pedro", "María"],
+  edades: [23, 45, 18],
+}));
+
